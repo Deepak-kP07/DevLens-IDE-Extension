@@ -1,0 +1,98 @@
+{
+  "name": "devlens-extension",
+  "displayName": "DevLens",
+  "description": "Analyze terminal and browser errors with Gemini inside Cursor/VS Code.",
+  "version": "0.0.1",
+  "publisher": "devlens",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:devlens.updateApiKey",
+    "onView:devlens.sidebar"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "devlens.updateApiKey",
+        "title": "DevLens: Update API Key"
+      },
+      {
+        "command": "devlens.resetApiKey",
+        "title": "DevLens: Reset API Key"
+      },
+      {
+        "command": "devlens.sendTestError",
+        "title": "DevLens: Send Test Error"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "devlens",
+          "title": "DevLens",
+          "icon": "media/devlens.svg"
+        }
+      ]
+    },
+    "views": {
+      "devlens": [
+        {
+          "id": "devlens.sidebar",
+          "name": "DevLens",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "DevLens",
+      "properties": {
+        "devlens.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:3001",
+          "description": "DevLens backend API base URL."
+        },
+        "devlens.proxyPort": {
+          "type": "number",
+          "default": 3002,
+          "description": "Port for DevLens browser capture proxy."
+        },
+        "devlens.browserTargetUrl": {
+          "type": "string",
+          "default": "http://localhost:3000",
+          "description": "Target app URL behind DevLens proxy."
+        },
+        "devlens.autoOpenBrowserTab": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically open the proxied app URL in Cursor/VS Code Browser Tab."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "pretest": "npm run compile"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/express": "^4.17.21",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "eslint": "^9.27.0",
+    "typescript": "^5.8.3"
+  }
+}

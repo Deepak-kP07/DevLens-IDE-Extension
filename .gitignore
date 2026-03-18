@@ -1,0 +1,6 @@
+node_modules
+**/node_modules
+**/out
+**/.env
+backend/classifier/*.pkl
+.DS_Store

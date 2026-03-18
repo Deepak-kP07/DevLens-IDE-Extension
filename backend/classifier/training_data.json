@@ -1,0 +1,8 @@
+[
+  { "message": "SyntaxError: Unexpected token", "type": "Syntax", "severity": "Medium" },
+  { "message": "TypeError: Cannot read properties of undefined", "type": "Runtime", "severity": "Critical" },
+  { "message": "ReferenceError: x is not defined", "type": "Runtime", "severity": "High" },
+  { "message": "Failed to compile", "type": "Syntax", "severity": "High" },
+  { "message": "UnhandledPromiseRejectionWarning", "type": "Runtime", "severity": "Critical" },
+  { "message": "Expected 200 but got 500 in integration test", "type": "Logic", "severity": "Medium" }
+]

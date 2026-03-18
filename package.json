@@ -1,0 +1,15 @@
+{
+  "name": "devlens",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "extension",
+    "backend"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "build:extension": "npm run compile --workspace extension",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:extension": "npm run watch --workspace extension"
+  }
+}
