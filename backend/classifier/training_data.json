@@ -1,8 +1,1247 @@
 [
-  { "message": "SyntaxError: Unexpected token", "type": "Syntax", "severity": "Medium" },
-  { "message": "TypeError: Cannot read properties of undefined", "type": "Runtime", "severity": "Critical" },
-  { "message": "ReferenceError: x is not defined", "type": "Runtime", "severity": "High" },
-  { "message": "Failed to compile", "type": "Syntax", "severity": "High" },
-  { "message": "UnhandledPromiseRejectionWarning", "type": "Runtime", "severity": "Critical" },
-  { "message": "Expected 200 but got 500 in integration test", "type": "Logic", "severity": "Medium" }
+  {
+    "message": "SyntaxError: Unexpected token '}'",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Unexpected token '{'",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Unexpected token ','",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Unexpected token ')'",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Unexpected token '('",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Unexpected end of input",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Unexpected identifier",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: missing ) after argument list",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: missing } after block statement",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: missing ; before statement",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: Invalid or unexpected token",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Illegal return statement",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Cannot use import statement outside a module",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Duplicate parameter name not allowed",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: Identifier has already been declared",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: await is only valid in async functions",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: yield is a reserved word",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: Octal literals are not allowed in strict mode",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: The requested module does not provide an export",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Cannot use 'import.meta' outside a module",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: Rest element must be last element",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: Unexpected strict mode reserved word",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: Tagged template expressions are not permitted in an optional chain",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "TS1005: ';' expected",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "TS1003: Identifier expected",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "TS1128: Declaration or statement expected",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS2304: Cannot find name",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS2345: Argument of type is not assignable to parameter of type",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS2339: Property does not exist on type",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS2551: Property does not exist on type Did you mean",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "TS2322: Type is not assignable to type",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS2741: Property is missing in type but required in type",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS7006: Parameter implicitly has an any type",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "TS2307: Cannot find module or its corresponding type declarations",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS1109: Expression expected",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "TS2554: Expected arguments but got",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TS2366: Function lacks ending return statement",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: invalid syntax",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "IndentationError: unexpected indent",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "IndentationError: expected an indented block",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "IndentationError: unindent does not match any outer indentation level",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "TabError: inconsistent use of tabs and spaces in indentation",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: EOL while scanning string literal",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: EOF while scanning triple-quoted string literal",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: invalid character in identifier",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: positional argument follows keyword argument",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: cannot assign to function call",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: f-string expression part cannot include a backslash",
+    "type": "Syntax",
+    "severity": "Low"
+  },
+  {
+    "message": "SyntaxError: continue not properly in loop",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: break outside loop",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "SyntaxError: return outside function",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "Failed to compile",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "Compilation failed with errors",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "Module parse failed: Unexpected token",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "Build failed with errors",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "ERROR in ./src/index.js: SyntaxError",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "Webpack compilation error",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "Vite build error: Unexpected token",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "error TS2304 Could not find name",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "ESLint: Parsing error: Unexpected token",
+    "type": "Syntax",
+    "severity": "Medium"
+  },
+  {
+    "message": "Babel: Unexpected token",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "Next.js build error: SyntaxError",
+    "type": "Syntax",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: Cannot read properties of undefined",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Cannot read properties of null",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Cannot read property of undefined",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Cannot read property of null",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: undefined is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: null is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Cannot set properties of undefined",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Cannot set properties of null",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Cannot destructure property of undefined",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Cannot destructure property of null",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: Converting circular structure to JSON",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: Failed to fetch",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: NetworkError when attempting to fetch resource",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: Cannot convert undefined or null to object",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: Assignment to constant variable",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "TypeError: Right-hand side of instanceof is not callable",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "TypeError: reduce of empty array with no initial value",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: Cannot assign to read only property",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "TypeError: object is not iterable",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: Cannot use in operator to search for in undefined",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "TypeError: arr.map is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: arr.filter is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: arr.forEach is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: arr.find is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "TypeError: str.toLowerCase is not a function",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: str.split is not a function",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: Cannot call method on undefined",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "ReferenceError: x is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: Cannot access before initialization",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: variable is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: fetch is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: window is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: document is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: localStorage is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: process is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: require is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: module is not defined",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "ReferenceError: exports is not defined",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "ReferenceError: Cannot access let before initialization",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ReferenceError: Cannot access const before initialization",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "RangeError: Maximum call stack size exceeded",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "RangeError: Invalid array length",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "RangeError: toFixed() digits argument must be between 0 and 100",
+    "type": "Runtime",
+    "severity": "Low"
+  },
+  {
+    "message": "RangeError: Invalid time value",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "RangeError: offset is out of bounds",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "RangeError: Invalid count value",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "RangeError: Invalid string length",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Warning: Each child in a list should have a unique key prop",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Warning: Cannot update a component while rendering a different component",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Warning: Can't perform a React state update on an unmounted component",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: Too many re-renders. React limits the number of renders",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Error: Maximum update depth exceeded",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Error: Objects are not valid as a React child",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: Element type is invalid expected a string or a class",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Error: useEffect has a missing dependency",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: Hooks can only be called inside of the body of a function component",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Error: Invalid hook call",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Warning: React Hook useEffect contains a call to setState",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: A component is changing an uncontrolled input to be controlled",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: React encountered two children with the same key",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: Minified React error #310",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: Minified React error #418",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "React: Cannot read properties of null reading useState",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "React: render is not a function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Error: Cannot find module",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: Module not found",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: ENOENT: no such file or directory",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: EACCES: permission denied",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: EADDRINUSE: address already in use",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: ECONNREFUSED: connection refused",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: ETIMEDOUT: connection timed out",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: listen EADDRINUSE :::3000",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: Route.get() requires a callback function but got a Object",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: Cannot set headers after they are sent to the client",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: req.body is undefined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: JsonWebTokenError: invalid signature",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Error: TokenExpiredError: jwt expired",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: CORS policy blocked the request",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: multer: invalid file type",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: body-parser deprecated undefined extended",
+    "type": "Runtime",
+    "severity": "Low"
+  },
+  {
+    "message": "Error: connect ECONNREFUSED 127.0.0.1:27017",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "MongoServerError: E11000 duplicate key error",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "MongooseError: Operation buffering timed out",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "ValidationError: is required",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "CastError: Cast to ObjectId failed",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "MongoNetworkError: connection timed out",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "MongooseError: Model was already compiled",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "StrictModeError: Field is not in schema",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "MongoServerError: Authentication failed",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "MongoParseError: Invalid connection string",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "UnhandledPromiseRejectionWarning",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "UnhandledPromiseRejection: This error originated either by throwing inside of an async function",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "PromiseRejectionHandledWarning: Promise rejection was handled asynchronously",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: Promise returned but no await found",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Unhandled promise rejection: TypeError",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "async function returned undefined instead of a promise",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: 401 Unauthorized",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: 403 Forbidden",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: 404 Not Found",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Error: 500 Internal Server Error",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Error: 503 Service Unavailable",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Network Error: net::ERR_CONNECTION_REFUSED",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Network Error: net::ERR_NAME_NOT_RESOLVED",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Failed to load resource: the server responded with a status of 404",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Failed to load resource: the server responded with a status of 500",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "Access to fetch has been blocked by CORS policy",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Mixed Content: The page was loaded over HTTPS but requested an insecure resource",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "NameError: name is not defined",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "AttributeError: object has no attribute",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "KeyError: key not found in dictionary",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "IndexError: list index out of range",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ValueError: invalid literal for int() with base 10",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "TypeError: object is not subscriptable",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ImportError: cannot import name from module",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ModuleNotFoundError: No module named",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "FileNotFoundError: No such file or directory",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "ZeroDivisionError: division by zero",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "RecursionError: maximum recursion depth exceeded",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "MemoryError: Unable to allocate memory",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "OSError: [Errno 13] Permission denied",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "JSONDecodeError: Expecting value: line 1 column 1",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "requests.exceptions.ConnectionError: HTTPSConnectionPool",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "requests.exceptions.Timeout: Request timed out",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "sqlalchemy.exc.OperationalError: could not connect to server",
+    "type": "Runtime",
+    "severity": "Critical"
+  },
+  {
+    "message": "npm ERR! peer dep missing",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "npm ERR! code ERESOLVE",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "npm ERR! Cannot find package",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "npm WARN deprecated package",
+    "type": "Runtime",
+    "severity": "Low"
+  },
+  {
+    "message": "yarn install failed with exit code 1",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: Cannot resolve dependency tree",
+    "type": "Runtime",
+    "severity": "High"
+  },
+  {
+    "message": "Error: node_modules not found run npm install",
+    "type": "Runtime",
+    "severity": "Medium"
+  },
+  {
+    "message": "Component renders but shows no data",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "State not updating after setState call",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "useEffect running infinitely in a loop",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Component re-renders too many times without stopping",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Props not passed correctly to child component",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "useState value is stale inside callback",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "useEffect dependency array missing causing stale closure",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "API data available but UI shows empty",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "onClick handler fires but nothing happens",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Form submit does not send data to backend",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Conditional rendering showing wrong component",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Loading state never turns off after fetch completes",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Data fetched successfully but map returns empty array",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Context value not updating across components",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "API returns 200 but response body is empty",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "POST request body received as undefined in controller",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Mongoose query returns null even though document exists",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Filter query not returning expected results from MongoDB",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "JWT token decoded but user not found in database",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Password comparison returns false for correct password",
+    "type": "Logic",
+    "severity": "Critical"
+  },
+  {
+    "message": "bcrypt hash not matching on login",
+    "type": "Logic",
+    "severity": "Critical"
+  },
+  {
+    "message": "Middleware not executing before route handler",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "async/await result undefined instead of resolved value",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Array push inside loop not persisting between iterations",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Object spread overwriting properties unintentionally",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Sorting function not sorting array in correct order",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Date comparison returning wrong boolean",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Regex pattern not matching expected string",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Recursive function not hitting base case correctly",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Expected 200 but got 500 in integration test",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Expected 201 but got 400 in API test",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Test assertion failed: expected true but received false",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Jest: received value does not match expected snapshot",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Test timeout exceeded: async operation did not resolve",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Mock function was not called with expected arguments",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "beforeEach setup not running before test cases",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Database not seeded correctly before test run",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Test passes in isolation but fails when run with others",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Assertion error: expected array length 3 but got 0",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Off by one error in loop condition",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Wrong variable used inside if condition",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Function returns before all conditions are checked",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "parseInt returning NaN for valid number string",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Floating point comparison returning unexpected result",
+    "type": "Logic",
+    "severity": "Low"
+  },
+  {
+    "message": "Default parameter value not applied when argument is null",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Short circuit evaluation skipping important side effect",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Deep copy not working object still mutated",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Event listener attached multiple times causing duplicate calls",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "setTimeout callback running before data is ready",
+    "type": "Logic",
+    "severity": "High"
+  },
+  {
+    "message": "Race condition: two async operations writing same variable",
+    "type": "Logic",
+    "severity": "Critical"
+  },
+  {
+    "message": "Cache returning stale data after update",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Environment variable undefined in production but works locally",
+    "type": "Logic",
+    "severity": "Critical"
+  },
+  {
+    "message": "Wrong HTTP method used for API endpoint",
+    "type": "Logic",
+    "severity": "Medium"
+  },
+  {
+    "message": "Token not included in Authorization header",
+    "type": "Logic",
+    "severity": "High"
+  }
 ]

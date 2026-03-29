@@ -1,9 +1,105 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-function extractSection(text, heading) {
-  const regex = new RegExp(`${heading}:\\s*([\\s\\S]*?)(?=\\n[A-Z ]+:|$)`, "i");
-  const match = text.match(regex);
-  return match ? match[1].trim() : "";
+/**
+ * Extract WHAT / WHY / FIX from Gemini output.
+ * The previous regex used (?=\n[A-Z ]+:) which broke on lines like "ERROR:" or "[diagnostic:ts]"
+ * inside section bodies — those were treated as the next section header.
+ */
+function extractDevLensSections(raw) {
+  const text = String(raw ?? "").replace(/\r\n/g, "\n");
+  const lower = text.toLowerCase();
+
+  function findHeaderRange(label) {
+    const needle = `${label}:`;
+    const n = needle.toLowerCase();
+    let pos = 0;
+    while (pos <= text.length) {
+      const i = lower.indexOf(n, pos);
+      if (i < 0) {
+        return null;
+      }
+      const lineStart = i === 0 ? 0 : text.lastIndexOf("\n", i - 1) + 1;
+      const before = text.slice(lineStart, i);
+      if (/^[\s#*\-]*$/i.test(before)) {
+        return { labelStart: i, afterColon: i + needle.length };
+      }
+      pos = i + 1;
+    }
+    return null;
+  }
+
+  const W = findHeaderRange("WHAT HAPPENED");
+  const Y = findHeaderRange("WHY IT HAPPENED");
+  const F = findHeaderRange("FIX PROMPT");
+
+  let what = "";
+  let why = "";
+  let fixPrompt = "";
+
+  if (W && Y && Y.labelStart > W.afterColon) {
+    what = text.slice(W.afterColon, Y.labelStart).trim();
+  }
+  if (Y && F && F.labelStart > Y.afterColon) {
+    why = text.slice(Y.afterColon, F.labelStart).trim();
+  }
+  if (F) {
+    fixPrompt = text.slice(F.afterColon).trim();
+  }
+
+  return { what, why, fixPrompt };
+}
+
+/** When headings are missing but the model still returned useful text, don't throw away the reply. */
+function softFallbackFromGeminiBody(text, payload) {
+  const t = String(text).replace(/\r\n/g, "\n").trim();
+  if (t.length < 30) {
+    return null;
+  }
+  const msg = String(payload.message ?? "").trim();
+  const shortMsg = msg.length > 160 ? `${msg.slice(0, 160)}…` : msg;
+  return {
+    what: `An error was reported (${payload.source ?? "unknown"}): ${shortMsg || "see details below."}`,
+    why: "The model reply did not use the exact DevLens section labels; the guidance below is still from the assistant.",
+    fixPrompt: t,
+  };
+}
+
+/** Remove markdown clutter models often add (**bold**, ## headers, etc.) for copy-paste friendly text. */
+function stripMarkdownNoise(text) {
+  if (!text || typeof text !== "string") {
+    return "";
+  }
+  let t = text.replace(/\r\n/g, "\n");
+  let prev;
+  do {
+    prev = t;
+    t = t.replace(/\*\*([^*]+)\*\*/g, "$1");
+  } while (t !== prev);
+  t = t.replace(/^#{1,6}\s+/gm, "");
+  t = t.replace(/^\s*([-*_])\1{2,}\s*$/gm, "");
+  t = t.replace(/\n{3,}/g, "\n\n");
+  return t.trim();
+}
+
+const FIX_PROMPT_MAX_CHARS = 2200;
+
+function clampFixPrompt(text) {
+  const s = stripMarkdownNoise(text);
+  if (s.length <= FIX_PROMPT_MAX_CHARS) {
+    return s;
+  }
+  const cut = s.slice(0, FIX_PROMPT_MAX_CHARS);
+  const lastBreak = Math.max(cut.lastIndexOf("\n"), cut.lastIndexOf(" "));
+  const head = lastBreak > FIX_PROMPT_MAX_CHARS * 0.65 ? cut.slice(0, lastBreak) : cut;
+  return `${head.trim()}\n…`;
+}
+
+function polishSections(what, why, fixPrompt) {
+  return {
+    what: stripMarkdownNoise(what),
+    why: stripMarkdownNoise(why),
+    fixPrompt: clampFixPrompt(fixPrompt),
+  };
 }
 
 function fallbackAnalysis(message) {
@@ -82,10 +178,24 @@ async function callGemini(apiKey, payload) {
 
   const prompt = `
 You are DevLens, a debugging assistant for IDE users.
-Return exactly these sections:
+
+Output plain text only — no markdown: do NOT use **, __, # headings, horizontal rules, or decorative bullets.
+Use "-" at line start only when listing separate steps. Keep wording tight and scannable.
+
+Return exactly these sections (labels verbatim):
+
 WHAT HAPPENED:
+One or two short sentences in everyday language (what broke and where).
+
 WHY IT HAPPENED:
+One or two short sentences on the root cause (no repetition of WHAT).
+
 FIX PROMPT:
+Concise, actionable instructions the user can paste into an AI assistant or follow directly.
+- Order: most important fix first, then 2–6 supporting steps if needed.
+- Mention real file paths, line numbers, or symbol names from the error when useful.
+- Prefer imperative lines ("Do X…", "Verify Y…") over long paragraphs.
+- Aim under ~1800 characters; omit filler and redundant explanations.
 
 Error source: ${payload.source}
 Error message:
@@ -107,15 +217,22 @@ ${payload.codeContext ?? "not provided"}
       const model = client.getGenerativeModel({ model: modelName });
       const result = await model.generateContent(prompt);
       const text = result.response.text();
-      const what = extractSection(text, "WHAT HAPPENED");
-      const why = extractSection(text, "WHY IT HAPPENED");
-      const fixPrompt = extractSection(text, "FIX PROMPT");
+      let { what, why, fixPrompt } = extractDevLensSections(text);
+
+      if (!what || !why || !fixPrompt) {
+        const soft = softFallbackFromGeminiBody(text, payload);
+        if (soft) {
+          what = what || soft.what;
+          why = why || soft.why;
+          fixPrompt = fixPrompt || soft.fixPrompt;
+        }
+      }
 
       if (!what || !why || !fixPrompt) {
         return fallbackAnalysis(payload.message);
       }
 
-      return { what, why, fixPrompt };
+      return polishSections(what, why, fixPrompt);
     } catch (error) {
       lastError = error;
     }

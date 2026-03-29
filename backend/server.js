@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const http = require("http");
 const errorRoutes = require("./routes/errors");
 
 const app = express();
@@ -40,7 +41,51 @@ async function connectMongoWithRetry() {
   }
 }
 
-app.listen(port, () => {
+function checkExistingBackend() {
+  return new Promise((resolve) => {
+    const req = http.request(
+      {
+        hostname: "127.0.0.1",
+        port,
+        path: "/health",
+        method: "GET",
+        timeout: 1200,
+      },
+      (res) => {
+        resolve(res.statusCode && res.statusCode >= 200 && res.statusCode < 500);
+      },
+    );
+    req.on("error", () => resolve(false));
+    req.on("timeout", () => {
+      req.destroy();
+      resolve(false);
+    });
+    req.end();
+  });
+}
+
+const server = app.listen(port, () => {
   console.log(`[devlens-backend] listening on http://localhost:${port}`);
   void connectMongoWithRetry();
+});
+
+server.on("error", async (error) => {
+  if (error && error.code === "EADDRINUSE") {
+    const alreadyRunning = await checkExistingBackend();
+    if (alreadyRunning) {
+      console.log(
+        `[devlens-backend] port ${port} already in use by a running backend. Reusing existing instance.`,
+      );
+      process.exit(0);
+      return;
+    }
+    console.error(
+      `[devlens-backend] port ${port} is in use by another process. Stop that process or change PORT in backend/.env.`,
+    );
+    process.exit(1);
+    return;
+  }
+  const message = error instanceof Error ? error.message : String(error);
+  console.error(`[devlens-backend] startup failed: ${message}`);
+  process.exit(1);
 });

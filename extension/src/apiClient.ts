@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { getApiKey } from "./secrets";
 import { ErrorPayload, PersistedError } from "./types";
 
 const DEFAULT_BACKEND_URL = "http://localhost:3001";
@@ -19,7 +20,7 @@ export async function sendErrorToBackend(
   context: vscode.ExtensionContext,
   payload: ErrorPayload,
 ): Promise<PersistedError> {
-  const apiKey = await context.secrets.get("devlens.geminiApiKey");
+  const apiKey = await getApiKey(context);
   const response = await fetch(`${getBackendBaseUrl()}/api/error`, {
     method: "POST",
     headers: {
